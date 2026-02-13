@@ -613,44 +613,30 @@ h1 {
     }
 }
 
-@media (max-width: 600px) {
-  .letter-window {
-    padding-top: 80px !important; /* Shorter padding for iPhone */
-    transform: scale(1) !important; /* Prevents it from being too big */
-  }
-}
-
-
-/* Mobile Fix for iPhone */
-@media (max-width: 600px) {
-    .letter-window {
-        padding-top: 80px !important; 
-        transform: scale(0.85) !important; 
-        margin-top: 20px;
-    }
-    
-    /* This targets the text that was overlapping */
-    h2, .love-text, #kiss-screen h2 { 
-        font-size: 1.1rem !important;
-        margin-top: 10px !important;
-    }
-}
-
-
-/* FINAL MOBILE OVERRIDE */
+/* DELETE ALL OTHER @media (max-width: 600px) BLOCKS AND USE THIS ONE */
 @media screen and (max-width: 600px) {
-    /* This targets the window specifically when it is open on a phone */
+    /* This forces the window to stay inside the phone screen */
+    .letter-window, 
+    .letter-window.open, 
     .letter-window.kiss-window.open {
-        padding-top: 100px !important; 
-        transform: scale(0.8) !important; 
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
+        padding-top: 120px !important; /* Pushes text down significantly */
+        transform: scale(0.8) !important; /* Shrinks the window to fit iPhone */
+        background-size: contain !important;
+        width: 95vw !important;
+        margin-top: 0 !important;
     }
 
-    /* This moves the "Mmmmm" text down so it's not on the pink bar */
-    .letter-window h2 {
-        margin-top: 10px !important;
-        font-size: 1.1rem !important;
+    /* This targets the "Mmmmmmmm" (h2) or h1 text specifically */
+    .letter-window h1, 
+    .letter-window h2, 
+    .kiss-counter-title {
+        font-size: 1.2rem !important;
+        margin-top: 5px !important;
+        padding: 0 10px !important;
+    }
+
+    /* Shrink the cat image slightly so it doesn't push text out */
+    .cat {
+        width: 150px !important;
     }
 }
