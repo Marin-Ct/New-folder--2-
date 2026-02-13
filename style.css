@@ -619,3 +619,19 @@ h1 {
     transform: scale(1) !important; /* Prevents it from being too big */
   }
 }
+
+
+/* Mobile Fix for iPhone */
+@media (max-width: 600px) {
+    .letter-window {
+        padding-top: 80px !important; 
+        transform: scale(0.85) !important; 
+        margin-top: 20px;
+    }
+    
+    /* This targets the text that was overlapping */
+    h2, .love-text, #kiss-screen h2 { 
+        font-size: 1.1rem !important;
+        margin-top: 10px !important;
+    }
+}
