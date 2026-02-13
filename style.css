@@ -612,3 +612,10 @@ h1 {
         padding-bottom: 100px;
     }
 }
+
+@media (max-width: 600px) {
+  .letter-window {
+    padding-top: 80px !important; /* Shorter padding for iPhone */
+    transform: scale(1) !important; /* Prevents it from being too big */
+  }
+}
