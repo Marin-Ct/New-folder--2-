@@ -635,3 +635,22 @@ h1 {
         margin-top: 10px !important;
     }
 }
+
+
+/* FINAL MOBILE OVERRIDE */
+@media screen and (max-width: 600px) {
+    /* This targets the window specifically when it is open on a phone */
+    .letter-window.kiss-window.open {
+        padding-top: 100px !important; 
+        transform: scale(0.8) !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    /* This moves the "Mmmmm" text down so it's not on the pink bar */
+    .letter-window h2 {
+        margin-top: 10px !important;
+        font-size: 1.1rem !important;
+    }
+}
