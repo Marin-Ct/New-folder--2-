@@ -613,30 +613,32 @@ h1 {
     }
 }
 
-/* DELETE ALL OTHER @media (max-width: 600px) BLOCKS AND USE THIS ONE */
 @media screen and (max-width: 600px) {
-    /* This forces the window to stay inside the phone screen */
     .letter-window, 
     .letter-window.open, 
     .letter-window.kiss-window.open {
-        padding-top: 120px !important; /* Pushes text down significantly */
-        transform: scale(0.8) !important; /* Shrinks the window to fit iPhone */
-        background-size: contain !important;
+        /* Resetting the padding so it doesn't fight the centering */
+        padding-top: 60px !important; 
+        padding-bottom: 20px !important;
+        
+        /* This forces the text to stay in the middle of the box */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important; 
+        
+        transform: scale(0.85) !important;
         width: 95vw !important;
-        margin-top: 0 !important;
+        aspect-ratio: 3/2 !important; /* Forces the box to keep its shape */
     }
 
-    /* This targets the "Mmmmmmmm" (h2) or h1 text specifically */
-    .letter-window h1, 
-    .letter-window h2, 
-    .kiss-counter-title {
-        font-size: 1.2rem !important;
-        margin-top: 5px !important;
-        padding: 0 10px !important;
-    }
-
-    /* Shrink the cat image slightly so it doesn't push text out */
+    /* Shrink the cat and text so they don't "stretch" the box */
     .cat {
-        width: 150px !important;
+        width: 140px !important;
+        height: auto !important;
+    }
+
+    h1, h2, .kiss-counter-title {
+        font-size: 1.1rem !important;
+        margin: 5px 0 !important;
     }
 }
